@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64FBC21B625C43E58F2F24B4 /* Pods_Campanero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12D52F425CC5336CE0EC7D9C /* Pods_Campanero.framework */; };
 		8943DB2C1D39844E00B7390A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8943DB2B1D39844E00B7390A /* AppDelegate.swift */; };
 		8943DB2E1D39844E00B7390A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8943DB2D1D39844E00B7390A /* ViewController.swift */; };
 		8943DB311D39844E00B7390A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8943DB2F1D39844E00B7390A /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		12D52F425CC5336CE0EC7D9C /* Pods_Campanero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Campanero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8943DB281D39844D00B7390A /* Campanero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Campanero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8943DB2B1D39844E00B7390A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8943DB2D1D39844E00B7390A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +53,8 @@
 		8943DB4E1D39844E00B7390A /* CampaneroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaneroUITests.swift; sourceTree = "<group>"; };
 		8943DB501D39844E00B7390A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8943DB5C1D3B22CC00B7390A /* 1 Launch screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1 Launch screen.png"; sourceTree = "<group>"; };
+		A1BEAB35D3AE8A1C521C126F /* Pods-Campanero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Campanero.release.xcconfig"; path = "Pods/Target Support Files/Pods-Campanero/Pods-Campanero.release.xcconfig"; sourceTree = "<group>"; };
+		F94E3B56F29BD16A4A9A2677 /* Pods-Campanero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Campanero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Campanero/Pods-Campanero.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64FBC21B625C43E58F2F24B4 /* Pods_Campanero.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3249038F7E84922A4043172D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				12D52F425CC5336CE0EC7D9C /* Pods_Campanero.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		34B3A4B20215BEB305B9E36C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F94E3B56F29BD16A4A9A2677 /* Pods-Campanero.debug.xcconfig */,
+				A1BEAB35D3AE8A1C521C126F /* Pods-Campanero.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8943DB1F1D39844D00B7390A = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +107,8 @@
 				8943DB421D39844E00B7390A /* CampaneroTests */,
 				8943DB4D1D39844E00B7390A /* CampaneroUITests */,
 				8943DB291D39844D00B7390A /* Products */,
+				34B3A4B20215BEB305B9E36C /* Pods */,
+				3249038F7E84922A4043172D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,9 +162,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8943DB531D39844E00B7390A /* Build configuration list for PBXNativeTarget "Campanero" */;
 			buildPhases = (
+				919A76EA392ABBCB921CDE26 /* [CP] Check Pods Manifest.lock */,
 				8943DB241D39844D00B7390A /* Sources */,
 				8943DB251D39844D00B7390A /* Frameworks */,
 				8943DB261D39844D00B7390A /* Resources */,
+				525FABDB9AA45A4A9AF97787 /* [CP] Embed Pods Frameworks */,
+				5DA7A0B5B91FCA3C312B6122 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,6 +284,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		525FABDB9AA45A4A9AF97787 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Campanero/Pods-Campanero-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DA7A0B5B91FCA3C312B6122 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Campanero/Pods-Campanero-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		919A76EA392ABBCB921CDE26 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8943DB241D39844D00B7390A /* Sources */ = {
@@ -407,6 +482,7 @@
 		};
 		8943DB541D39844E00B7390A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F94E3B56F29BD16A4A9A2677 /* Pods-Campanero.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Campanero/Info.plist;
@@ -418,6 +494,7 @@
 		};
 		8943DB551D39844E00B7390A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1BEAB35D3AE8A1C521C126F /* Pods-Campanero.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Campanero/Info.plist;
@@ -492,6 +569,7 @@
 				8943DB551D39844E00B7390A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8943DB561D39844E00B7390A /* Build configuration list for PBXNativeTarget "CampaneroTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +578,7 @@
 				8943DB581D39844E00B7390A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8943DB591D39844E00B7390A /* Build configuration list for PBXNativeTarget "CampaneroUITests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +587,7 @@
 				8943DB5B1D39844E00B7390A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
