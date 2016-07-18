@@ -17,11 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1 Launch screen.png" translatesAutoresizingMaskIntoConstraints="NO" id="Mth-J0-cvT">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Campana " translatesAutoresizingMaskIntoConstraints="NO" id="Mth-J0-cvT">
+                                <rect key="frame" x="63" y="186" width="194" height="195"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="195" id="DGw-50-GPz"/>
+                                    <constraint firstAttribute="width" constant="194" id="br1-VM-EQt"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Mth-J0-cvT" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="mHX-Q9-g2c"/>
+                            <constraint firstItem="Mth-J0-cvT" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="vMQ-FQ-lkw"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
@@ -31,6 +39,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1 Launch screen.png" width="375" height="667"/>
+        <image name="Campana " width="177" height="182"/>
     </resources>
 </document>

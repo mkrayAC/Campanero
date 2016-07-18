@@ -17,6 +17,8 @@
 		8943DB441D39844E00B7390A /* CampaneroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8943DB431D39844E00B7390A /* CampaneroTests.swift */; };
 		8943DB4F1D39844E00B7390A /* CampaneroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8943DB4E1D39844E00B7390A /* CampaneroUITests.swift */; };
 		8943DB5D1D3B22CC00B7390A /* 1 Launch screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 8943DB5C1D3B22CC00B7390A /* 1 Launch screen.png */; };
+		8943DB631D3D872600B7390A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8943DB621D3D872600B7390A /* MapViewController.swift */; };
+		8943DB651D3D874500B7390A /* SelectOptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8943DB641D3D874500B7390A /* SelectOptionController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		8943DB4E1D39844E00B7390A /* CampaneroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaneroUITests.swift; sourceTree = "<group>"; };
 		8943DB501D39844E00B7390A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8943DB5C1D3B22CC00B7390A /* 1 Launch screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1 Launch screen.png"; sourceTree = "<group>"; };
+		8943DB621D3D872600B7390A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		8943DB641D3D874500B7390A /* SelectOptionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectOptionController.swift; sourceTree = "<group>"; };
 		A1BEAB35D3AE8A1C521C126F /* Pods-Campanero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Campanero.release.xcconfig"; path = "Pods/Target Support Files/Pods-Campanero/Pods-Campanero.release.xcconfig"; sourceTree = "<group>"; };
 		F94E3B56F29BD16A4A9A2677 /* Pods-Campanero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Campanero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Campanero/Pods-Campanero.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +137,8 @@
 				8943DB5C1D3B22CC00B7390A /* 1 Launch screen.png */,
 				8943DB3A1D39844E00B7390A /* Info.plist */,
 				8943DB321D39844E00B7390A /* Campanero.xcdatamodeld */,
+				8943DB621D3D872600B7390A /* MapViewController.swift */,
+				8943DB641D3D874500B7390A /* SelectOptionController.swift */,
 			);
 			path = Campanero;
 			sourceTree = "<group>";
@@ -339,8 +345,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8943DB341D39844E00B7390A /* Campanero.xcdatamodeld in Sources */,
+				8943DB651D3D874500B7390A /* SelectOptionController.swift in Sources */,
 				8943DB2E1D39844E00B7390A /* ViewController.swift in Sources */,
 				8943DB2C1D39844E00B7390A /* AppDelegate.swift in Sources */,
+				8943DB631D3D872600B7390A /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
