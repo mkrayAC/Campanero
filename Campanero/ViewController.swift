@@ -37,7 +37,6 @@ class ViewController: UIViewController {
         firstCheckMarckImage.hidden = true
         secondCheckMarckImage.hidden = false
         
-        
     }
     // MARK: Properties
 
