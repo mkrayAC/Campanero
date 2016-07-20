@@ -10,25 +10,45 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
     var arrayWithQuestions = NSMutableArray()
     var isOpen = Bool()
 
     @IBOutlet weak var rateServiceButtonImage: UIImageView!
-    
-   
     @IBOutlet weak var rateServiceButton: UIButton!
-    
     @IBOutlet weak var tableView: UITableView!
+    
+    
+    @IBOutlet weak var firstCheckMarckImage: UIImageView!
+    @IBOutlet weak var secondCheckMarckImage: UIImageView!
+    
+    
+    
+    @IBAction func halfHourOption(sender: AnyObject) {
+        
+        firstCheckMarckImage.hidden = false
+        secondCheckMarckImage.hidden = true
+        
+        
+    }
+    
+    @IBAction func fullTimeOption(sender: AnyObject) {
+        
+        firstCheckMarckImage.hidden = true
+        secondCheckMarckImage.hidden = false
+        
+        
+    }
     // MARK: Properties
 
-    @IBOutlet weak var directionTextField: UITextField!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         
         isOpen=false
         
+    
         
         arrayWithQuestions = ["A tiempo","Con retardo(5-10min)","Tarde(20 min)", "No paso", "Paso antes", "Paso sin recoger"]
         tableView.dataSource = self
@@ -43,14 +63,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: Actions
-    
-    
-    @IBAction func selectButton(sender: UIButton) {
-        
-        directionTextField.text = "Default Text"
-    }
-    
+    //boton para mostrar y esconder menu de valoracion de servicio
     
     @IBAction func openRateView(sender: AnyObject) {
         
@@ -71,6 +84,9 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    
+    
 }
 
 

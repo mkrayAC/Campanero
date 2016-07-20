@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		64FBC21B625C43E58F2F24B4 /* Pods_Campanero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12D52F425CC5336CE0EC7D9C /* Pods_Campanero.framework */; };
+		891873AF1D3DD5D6009703A0 /* Swift.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 891873AE1D3DD5D6009703A0 /* Swift.ttf */; };
+		891873B11D3DD65E009703A0 /* KeepCalm-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 891873B01D3DD65E009703A0 /* KeepCalm-Medium.ttf */; };
 		8943DB2C1D39844E00B7390A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8943DB2B1D39844E00B7390A /* AppDelegate.swift */; };
 		8943DB2E1D39844E00B7390A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8943DB2D1D39844E00B7390A /* ViewController.swift */; };
 		8943DB311D39844E00B7390A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8943DB2F1D39844E00B7390A /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		12D52F425CC5336CE0EC7D9C /* Pods_Campanero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Campanero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		891873AE1D3DD5D6009703A0 /* Swift.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Swift.ttf; sourceTree = "<group>"; };
+		891873B01D3DD65E009703A0 /* KeepCalm-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KeepCalm-Medium.ttf"; sourceTree = "<group>"; };
 		8943DB281D39844D00B7390A /* Campanero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Campanero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8943DB2B1D39844E00B7390A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8943DB2D1D39844E00B7390A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +108,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		891873AC1D3DD5B0009703A0 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				891873AD1D3DD5C2009703A0 /* Font */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		891873AD1D3DD5C2009703A0 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				891873AE1D3DD5D6009703A0 /* Swift.ttf */,
+				891873B01D3DD65E009703A0 /* KeepCalm-Medium.ttf */,
+			);
+			name = Font;
+			sourceTree = "<group>";
+		};
 		8943DB1F1D39844D00B7390A = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +150,7 @@
 		8943DB2A1D39844E00B7390A /* Campanero */ = {
 			isa = PBXGroup;
 			children = (
+				891873AC1D3DD5B0009703A0 /* Resource */,
 				8943DB2B1D39844E00B7390A /* AppDelegate.swift */,
 				8943DB2D1D39844E00B7390A /* ViewController.swift */,
 				8943DB2F1D39844E00B7390A /* Main.storyboard */,
@@ -232,6 +254,7 @@
 				TargetAttributes = {
 					8943DB271D39844D00B7390A = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 58A698JC75;
 					};
 					8943DB3E1D39844E00B7390A = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -268,10 +291,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				891873AF1D3DD5D6009703A0 /* Swift.ttf in Resources */,
 				8943DB391D39844E00B7390A /* LaunchScreen.storyboard in Resources */,
 				8943DB361D39844E00B7390A /* Assets.xcassets in Resources */,
 				8943DB5D1D3B22CC00B7390A /* 1 Launch screen.png in Resources */,
 				8943DB311D39844E00B7390A /* Main.storyboard in Resources */,
+				891873B11D3DD65E009703A0 /* KeepCalm-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,10 +518,13 @@
 			baseConfigurationReference = F94E3B56F29BD16A4A9A2677 /* Pods-Campanero.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Campanero/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Oscar-AC.Campanero";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -505,10 +533,13 @@
 			baseConfigurationReference = A1BEAB35D3AE8A1C521C126F /* Pods-Campanero.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Campanero/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Oscar-AC.Campanero";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
