@@ -111,6 +111,7 @@
 		891873AC1D3DD5B0009703A0 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				895CDE051D4172D800934F28 /* Controllers */,
 				891873AD1D3DD5C2009703A0 /* Font */,
 			);
 			name = Resource;
@@ -151,16 +152,12 @@
 			isa = PBXGroup;
 			children = (
 				891873AC1D3DD5B0009703A0 /* Resource */,
-				8943DB2B1D39844E00B7390A /* AppDelegate.swift */,
-				8943DB2D1D39844E00B7390A /* ViewController.swift */,
 				8943DB2F1D39844E00B7390A /* Main.storyboard */,
 				8943DB351D39844E00B7390A /* Assets.xcassets */,
 				8943DB371D39844E00B7390A /* LaunchScreen.storyboard */,
 				8943DB5C1D3B22CC00B7390A /* 1 Launch screen.png */,
 				8943DB3A1D39844E00B7390A /* Info.plist */,
 				8943DB321D39844E00B7390A /* Campanero.xcdatamodeld */,
-				8943DB621D3D872600B7390A /* MapViewController.swift */,
-				8943DB641D3D874500B7390A /* SelectOptionController.swift */,
 			);
 			path = Campanero;
 			sourceTree = "<group>";
@@ -181,6 +178,17 @@
 				8943DB501D39844E00B7390A /* Info.plist */,
 			);
 			path = CampaneroUITests;
+			sourceTree = "<group>";
+		};
+		895CDE051D4172D800934F28 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8943DB2B1D39844E00B7390A /* AppDelegate.swift */,
+				8943DB2D1D39844E00B7390A /* ViewController.swift */,
+				8943DB641D3D874500B7390A /* SelectOptionController.swift */,
+				8943DB621D3D872600B7390A /* MapViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

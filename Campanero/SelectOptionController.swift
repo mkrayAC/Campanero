@@ -8,7 +8,12 @@
 
 import UIKit
 
-class SelectOptionController: UIViewController  {
+
+class SelectOptionController: UIViewController, SaveDirectionDelegate  {
+    
+    
+    
+    
     
     var arrayWithDirections = NSMutableArray()
    
@@ -17,22 +22,22 @@ class SelectOptionController: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         arrayWithDirections = ["V. carranza 131","Paseo de azaleas 992"]
+        if let array = NSUserDefaults.standardUserDefaults().objectForKey("directions") as? NSArray{
+        
+            arrayWithDirections = array.mutableCopy() as! NSMutableArray
+            
+        }
         
         tablewViewDirection.dataSource = self
         tablewViewDirection.delegate = self
-        
-        
-       
- 
-        // Do any additional setup after loading the view.
-        
-//añadir boton con codigo a la barra
-        
+  
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: #selector(addTapped))
 //tocar boton y mandar a mapa con segue
         
     }
+    
+    
+    
     func addTapped()  {
         
         self.performSegueWithIdentifier("addDirection", sender: nil)
@@ -40,19 +45,31 @@ class SelectOptionController: UIViewController  {
         
     }
     
-
+    func sendDirection(direction: String) {
+        arrayWithDirections.addObject(direction)
+        
+        let arrayInmutable = NSArray(array: arrayWithDirections)
+        NSUserDefaults.standardUserDefaults().setObject(arrayInmutable, forKey: "directions")
+        NSUserDefaults.standardUserDefaults().synchronize()
+        
+        
+        tablewViewDirection.reloadData()
+    }
 
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let controller = segue.destinationViewController as! MapViewController
+        controller.delegate = self
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
 
@@ -69,6 +86,8 @@ extension SelectOptionController:UITableViewDataSource, UITableViewDelegate{
         customCell.textLabel?.font = UIFont(name: "KeepCalm-Medium", size: 14)
         customCell.textLabel?.text = arrayWithDirections.objectAtIndex(indexPath.row) as? String
         customCell.selectionStyle = .None
+        
+        
         return customCell
     }
     
@@ -79,6 +98,7 @@ extension SelectOptionController:UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         cell?.accessoryType = .Checkmark
         
+        NSUserDefaults.standardUserDefaults().setObject(arrayWithDirections.objectAtIndex(indexPath.row), forKey: "selected")
         
         //    indexPathSelected = indexPath
         

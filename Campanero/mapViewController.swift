@@ -9,7 +9,18 @@
 import UIKit
 import GoogleMaps
 
+protocol SaveDirectionDelegate: class{
+
+    func sendDirection(direction:String)
+
+
+}
+
+
+
 class MapViewController: UIViewController {
+    
+    var delegate: SaveDirectionDelegate?
     
     
     @IBOutlet weak var directionLabel: UILabel!
@@ -24,7 +35,15 @@ class MapViewController: UIViewController {
         mapView.myLocationEnabled = true
         
 
-        // Do any additional setup after loading the view.
+        //añadir boton con codigo a la barra
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "save", style: .Plain, target: self, action: #selector(addTapped))
+            }
+    func addTapped()  {
+        
+        self.navigationController?.popViewControllerAnimated(true)
+        delegate?.sendDirection(directionLabel.text!)
+        
     }
     
     

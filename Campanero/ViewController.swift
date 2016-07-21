@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var rateServiceButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var directionLabel: UILabel!
     
     @IBOutlet weak var firstCheckMarckImage: UIImageView!
     @IBOutlet weak var secondCheckMarckImage: UIImageView!
@@ -42,6 +43,15 @@ class ViewController: UIViewController {
         
         
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if let direction = NSUserDefaults.standardUserDefaults().objectForKey("selected")as? String{
+            
+        directionLabel.text = direction
+        
+        }
+        
     }
 
     
