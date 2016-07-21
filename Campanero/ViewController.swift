@@ -24,6 +24,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var secondCheckMarckImage: UIImageView!
     
     
+    
+
+    
 
     // MARK: Properties
 

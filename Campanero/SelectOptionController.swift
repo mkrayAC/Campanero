@@ -87,11 +87,42 @@ extension SelectOptionController:UITableViewDataSource, UITableViewDelegate{
         customCell.textLabel?.text = arrayWithDirections.objectAtIndex(indexPath.row) as? String
         customCell.selectionStyle = .None
         
+        if let direction = NSUserDefaults.standardUserDefaults().objectForKey("selected")as? String{
+            
+            if direction == arrayWithDirections.objectAtIndex(indexPath.row) as? String{
+            
+                 customCell.accessoryType = .Checkmark
+            }
+            
+            
+        }
         
+        
+       
         return customCell
     }
     
+     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+         //   arrayWithDirections.removeAtIndex(indexPath.row)
+            arrayWithDirections.removeObjectAtIndex(indexPath.row )
+            let arrayInmutable = NSArray(array: arrayWithDirections)
+            NSUserDefaults.standardUserDefaults().setObject(arrayInmutable, forKey: "directions")
+            NSUserDefaults.standardUserDefaults().synchronize()
+            
+
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+    }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let arrayWithCell = tableView.visibleCells
+        for cell in arrayWithCell{
+            cell.accessoryType = .None
+            
+        }
+        
         
         // marcar opcion
         
@@ -105,12 +136,7 @@ extension SelectOptionController:UITableViewDataSource, UITableViewDelegate{
         
     }
     
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
-        cell?.accessoryType = .None
-        
-    }
+    
     
     
 }
