@@ -23,6 +23,27 @@ class ViewController: UIViewController {
     @IBOutlet weak var secondCheckMarckImage: UIImageView!
     
     
+
+    // MARK: Properties
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+      
+        
+        
+        isOpen=false
+        
+    
+        
+        arrayWithQuestions = ["A tiempo","Con retardo(5-10min)","Tarde(20 min)", "No paso", "Paso antes", "Paso sin recoger"]
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
     
     @IBAction func halfHourOption(sender: AnyObject) {
         
@@ -37,29 +58,6 @@ class ViewController: UIViewController {
         firstCheckMarckImage.hidden = true
         secondCheckMarckImage.hidden = false
         
-    }
-    // MARK: Properties
-
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      
-        
-        isOpen=false
-        
-    
-        
-        arrayWithQuestions = ["A tiempo","Con retardo(5-10min)","Tarde(20 min)", "No paso", "Paso antes", "Paso sin recoger"]
-        tableView.dataSource = self
-        tableView.delegate = self
-        
-        
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     //boton para mostrar y esconder menu de valoracion de servicio
@@ -100,7 +98,8 @@ extension ViewController:UITableViewDataSource, UITableViewDelegate{
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let customCell = tableView.dequeueReusableCellWithIdentifier("myCell",forIndexPath: indexPath)
-        customCell.textLabel?.text=arrayWithQuestions.objectAtIndex(indexPath.row) as? String
+        customCell.textLabel?.font = UIFont(name: "KeepCalm-Medium", size: 14)
+        customCell.textLabel?.text = arrayWithQuestions.objectAtIndex(indexPath.row) as? String
         customCell.selectionStyle = .None
         return customCell
     }
