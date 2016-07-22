@@ -119,27 +119,30 @@
                                     <action selector="openRateView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XaV-pn-mWz"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="68z-Jp-d1l">
+                                <rect key="frame" x="248" y="130" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchButtonAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="59X-4X-cuM"/>
+                                </connections>
+                            </switch>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="i5s-ZR-XdW">
-                                <rect key="frame" x="0.0" y="270" width="320" height="298"/>
+                                <rect key="frame" x="60" y="265" width="210" height="248"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="lL8-b5-SJF">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="210" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lL8-b5-SJF" id="YUA-dE-njx">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="210" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="68z-Jp-d1l">
-                                <rect key="frame" x="248" y="130" width="51" height="31"/>
-                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="i5s-ZR-XdW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="19J-gy-ASm"/>
+                            <constraint firstItem="i5s-ZR-XdW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="60" id="19J-gy-ASm"/>
                             <constraint firstItem="Mn8-9t-wEq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="17" id="4Br-0G-Jsu"/>
                             <constraint firstItem="Dc3-dB-pyk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="5XD-yr-Sod"/>
                             <constraint firstAttribute="trailing" secondItem="wK7-qs-jl0" secondAttribute="trailing" constant="23" id="5re-f5-ZJa"/>
@@ -154,9 +157,9 @@
                             <constraint firstItem="8HR-gx-eX5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DyN-Sa-Qj6"/>
                             <constraint firstAttribute="trailing" secondItem="MGp-Xv-NdE" secondAttribute="trailing" constant="20" id="GQJ-NK-BFP"/>
                             <constraint firstItem="MGp-Xv-NdE" firstAttribute="top" secondItem="TNm-l8-aHv" secondAttribute="bottom" constant="8" id="GTT-4r-zLX"/>
-                            <constraint firstAttribute="trailing" secondItem="i5s-ZR-XdW" secondAttribute="trailing" id="GVK-d0-zzh"/>
+                            <constraint firstAttribute="trailing" secondItem="i5s-ZR-XdW" secondAttribute="trailing" constant="50" id="GVK-d0-zzh"/>
                             <constraint firstAttribute="trailing" secondItem="6ga-33-2CX" secondAttribute="trailing" constant="31" id="I7x-GV-BGc"/>
-                            <constraint firstItem="i5s-ZR-XdW" firstAttribute="top" secondItem="Mn8-9t-wEq" secondAttribute="bottom" constant="8" id="Ij1-ta-P7w"/>
+                            <constraint firstItem="i5s-ZR-XdW" firstAttribute="top" secondItem="Mn8-9t-wEq" secondAttribute="bottom" constant="3" id="Ij1-ta-P7w"/>
                             <constraint firstItem="6ga-33-2CX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Jud-aJ-oVw"/>
                             <constraint firstAttribute="trailing" secondItem="TNm-l8-aHv" secondAttribute="trailing" constant="20" id="KnF-zc-MpV"/>
                             <constraint firstItem="68z-Jp-d1l" firstAttribute="top" secondItem="8HR-gx-eX5" secondAttribute="bottom" constant="3" id="LHE-Hv-3Nj"/>
@@ -173,7 +176,7 @@
                             <constraint firstItem="8Fw-Qa-wKX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="14" id="hSp-jc-eRk"/>
                             <constraint firstItem="Mb5-kS-prP" firstAttribute="top" secondItem="5jo-NX-O73" secondAttribute="bottom" constant="4" id="mDX-G6-xFh"/>
                             <constraint firstItem="TNm-l8-aHv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="mnG-Dn-wke"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="i5s-ZR-XdW" secondAttribute="bottom" id="ngE-wg-s0y"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="i5s-ZR-XdW" secondAttribute="bottom" constant="55" id="ngE-wg-s0y"/>
                             <constraint firstItem="TNm-l8-aHv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="nqQ-Is-uaB"/>
                             <constraint firstAttribute="trailing" secondItem="8Fw-Qa-wKX" secondAttribute="trailing" constant="20" id="pyP-Ye-HnS"/>
                             <constraint firstItem="wK7-qs-jl0" firstAttribute="top" secondItem="9WX-8F-fsM" secondAttribute="bottom" constant="16" id="qRn-2Z-mkt"/>
@@ -189,9 +192,12 @@
                     <connections>
                         <outlet property="directionLabel" destination="TNm-l8-aHv" id="u7j-Ps-7Oa"/>
                         <outlet property="firstCheckMarckImage" destination="J1A-d3-Kwb" id="s9A-T6-JJu"/>
+                        <outlet property="fullHourButton" destination="8Fw-Qa-wKX" id="dJ7-Oz-oRC"/>
+                        <outlet property="halfHourButton" destination="9WX-8F-fsM" id="iIK-fu-bOW"/>
                         <outlet property="rateServiceButton" destination="Mn8-9t-wEq" id="Jlh-AJ-ak1"/>
                         <outlet property="rateServiceButtonImage" destination="97X-z6-jZn" id="I7E-Zg-bTY"/>
                         <outlet property="secondCheckMarckImage" destination="wK7-qs-jl0" id="CrL-Wg-2Qp"/>
+                        <outlet property="switchButton" destination="68z-Jp-d1l" id="udP-j7-6ex"/>
                         <outlet property="tableView" destination="i5s-ZR-XdW" id="8uu-Ge-rly"/>
                     </connections>
                 </viewController>

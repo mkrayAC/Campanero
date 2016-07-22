@@ -23,9 +23,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var firstCheckMarckImage: UIImageView!
     @IBOutlet weak var secondCheckMarckImage: UIImageView!
     
+    @IBOutlet weak var halfHourButton: UIButton!
     
     
-
+    @IBOutlet weak var switchButton: UISwitch!
+    @IBOutlet weak var fullHourButton: UIButton!
+    
     
 
     // MARK: Properties
@@ -35,6 +38,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
       
         
+        tableView.layer.borderWidth = 2.0
+        tableView.layer.borderColor = UIColor.blackColor().CGColor
         
         isOpen=false
         
@@ -46,6 +51,29 @@ class ViewController: UIViewController {
         
         
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    
+    
+    @IBAction func switchButtonAction(sender: AnyObject) {
+        
+        if !switchButton.on {
+            
+            firstCheckMarckImage.hidden = true
+            secondCheckMarckImage.hidden = true
+            
+            halfHourButton.enabled = false
+            fullHourButton.enabled = false
+            
+        }
+        else if  (switchButton != nil) {
+            
+            halfHourButton.enabled = true
+            fullHourButton.enabled = true
+        }
+        
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {
