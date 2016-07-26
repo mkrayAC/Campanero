@@ -52,7 +52,7 @@ class ViewController: UIViewController {
         tableView.delegate = self
         
         
-       //funciones y extensiones
+       //funciones y extensiones  //SOLO FUNCIONES
     }
     
     
@@ -78,7 +78,7 @@ class ViewController: UIViewController {
         
     }
     
-    override func viewWillAppear(animated: Bool) {   // ?????
+    override func viewWillAppear(animated: Bool) {   // ????? //INVESTIGA
         if let direction = NSUserDefaults.standardUserDefaults().objectForKey("selected")as? String{
             
         directionLabel.text = direction
@@ -131,7 +131,7 @@ class ViewController: UIViewController {
 
 
 
-extension ViewController:UITableViewDataSource, UITableViewDelegate{ // ??s
+extension ViewController:UITableViewDataSource, UITableViewDelegate{ // ??s  //PARECIDO AL DE MAPAS
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayWithQuestions.count

@@ -22,13 +22,13 @@ class SelectOptionController: UIViewController, SaveDirectionDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let array = NSUserDefaults.standardUserDefaults().objectForKey("directions") as? NSArray{ // ???
+        if let array = NSUserDefaults.standardUserDefaults().objectForKey("directions") as? NSArray{ // Valida si es array lo que está guardado
         
             arrayWithDirections = array.mutableCopy() as! NSMutableArray
             
         }
         
-        tablewViewDirection.dataSource = self  // self, delegate??
+        tablewViewDirection.dataSource = self  // self, delegate?? //INVESTIGA
         tablewViewDirection.delegate = self
   
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: #selector(addTapped))
@@ -46,12 +46,12 @@ class SelectOptionController: UIViewController, SaveDirectionDelegate  {
         
     }
     
-    func sendDirection(direction: String) {  //funcion para convertir un arreglo mutable en inmutable
+    func sendDirection(direction: String) {  //funcion para convertir un arreglo mutable en inmutable //NO ES CIERTO
         arrayWithDirections.addObject(direction)
         
-        let arrayInmutable = NSArray(array: arrayWithDirections) //conversion del arreglo
+        let arrayInmutable = NSArray(array: arrayWithDirections) //conversion del arreglo :CORRECTO
         NSUserDefaults.standardUserDefaults().setObject(arrayInmutable, forKey: "directions")//el arreglo se guarda en memoria
-        NSUserDefaults.standardUserDefaults().synchronize() // ??
+        NSUserDefaults.standardUserDefaults().synchronize() // ?? //INVESTIGA PARA QUE SIRVE EL SYNCHRONIZE
         
         
         tablewViewDirection.reloadData()
@@ -127,7 +127,7 @@ extension SelectOptionController:UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         cell?.accessoryType = .Checkmark
         
-        //Toma le valor de arrayWithDirectons y lo utiliza en el view controller para poder ver la direccion seleccionada
+        //Toma le valor de arrayWithDirectons y lo utiliza en el view controller para poder ver la direccion seleccionada //NO ES CIERTO
         NSUserDefaults.standardUserDefaults().setObject(arrayWithDirections.objectAtIndex(indexPath.row), forKey: "selected")
  
         

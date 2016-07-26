@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 
-//funcion para enviar datos de un controller a otro
+//funcion para enviar datos de un controller a otro //ES LO QUE HACE PERO EN REALIDAD ES UN PROTOCOLO
 
 protocol SaveDirectionDelegate: class{
 
@@ -53,7 +53,7 @@ class MapViewController: UIViewController {
     
 
 
-    func reverseGeocodeCoordinate(coordinate: CLLocationCoordinate2D) {//regresa las cordenadas del punto seleccionado y poner marcador
+    func reverseGeocodeCoordinate(coordinate: CLLocationCoordinate2D) {//regresa las cordenadas del punto seleccionado y poner marcador //NO ES CIERTO
         
         // 1
         let geocoder = GMSGeocoder()
@@ -125,7 +125,7 @@ extension MapViewController: CLLocationManagerDelegate, GMSMapViewDelegate{ //ex
         }
         
     }
-     // va en conjunto con la funcion geocoder
+     // va en conjunto con la funcion geocoder //NO ES CIERTO
     
     func mapView(mapView: GMSMapView, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
         
