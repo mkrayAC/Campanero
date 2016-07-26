@@ -9,6 +9,8 @@
 import UIKit
 import GoogleMaps
 
+//funcion para enviar datos de un controller a otro
+
 protocol SaveDirectionDelegate: class{
 
     func sendDirection(direction:String)
@@ -16,7 +18,7 @@ protocol SaveDirectionDelegate: class{
 
 }
 
-
+//Aqui van los outlets y todas la variables
 
 class MapViewController: UIViewController {
     
@@ -25,6 +27,7 @@ class MapViewController: UIViewController {
     
     @IBOutlet weak var directionLabel: UILabel!
     @IBOutlet weak var mapView: GMSMapView!
+    
     let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
@@ -39,6 +42,8 @@ class MapViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "save", style: .Plain, target: self, action: #selector(addTapped))
             }
+    
+    //regresar a ventana option despues de guardar 
     func addTapped()  {
         
         self.navigationController?.popViewControllerAnimated(true)
@@ -46,9 +51,9 @@ class MapViewController: UIViewController {
         
     }
     
-    
 
-    func reverseGeocodeCoordinate(coordinate: CLLocationCoordinate2D) {
+
+    func reverseGeocodeCoordinate(coordinate: CLLocationCoordinate2D) {//regresa las cordenadas del punto seleccionado y poner marcador
         
         // 1
         let geocoder = GMSGeocoder()
@@ -78,6 +83,7 @@ class MapViewController: UIViewController {
         }
     }
 
+
     /*
     // MARK: - Navigation
 
@@ -90,7 +96,7 @@ class MapViewController: UIViewController {
 
 }
 
-extension MapViewController: CLLocationManagerDelegate, GMSMapViewDelegate{
+extension MapViewController: CLLocationManagerDelegate, GMSMapViewDelegate{ //extension para utilizar los mapas y obtener la localizacion
     
     // 2
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
@@ -119,7 +125,7 @@ extension MapViewController: CLLocationManagerDelegate, GMSMapViewDelegate{
         }
         
     }
-    
+     // va en conjunto con la funcion geocoder
     
     func mapView(mapView: GMSMapView, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
         
@@ -129,7 +135,7 @@ extension MapViewController: CLLocationManagerDelegate, GMSMapViewDelegate{
           reverseGeocodeCoordinate(coordinate)
         
     }
-    
+ 
 
     
 

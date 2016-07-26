@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {// Activa el servicio de Google Maps con la API KEY que te genera google
         
         GMSServices.provideAPIKey("AIzaSyAScJclqWnbbytb-yKZBuoSR2OhhSuibic") 
         

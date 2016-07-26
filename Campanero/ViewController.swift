@@ -6,8 +6,10 @@
 //  Copyright © 2016 Nebusens. All rights reserved.
 //
 
-import UIKit
+import UIKit //libreria
 
+
+//aqui van todas las variables y outlets
 class ViewController: UIViewController {
     
     
@@ -41,23 +43,23 @@ class ViewController: UIViewController {
         tableView.layer.borderWidth = 2.0
         tableView.layer.borderColor = UIColor.blackColor().CGColor
         
-        isOpen=false
+        isOpen=false   //??
         
     
         
-        arrayWithQuestions = ["A tiempo","Con retardo(5-10min)","Tarde(20 min)", "No paso", "Paso antes", "Paso sin recoger"]
+        arrayWithQuestions = ["A tiempo","Pasó tarde", "No pasó", "Pasó antes", "Pasó sin recoger"]
         tableView.dataSource = self
         tableView.delegate = self
         
         
-        // Do any additional setup after loading the view, typically from a nib.
+       //funciones y extensiones
     }
     
     
     
-    @IBAction func switchButtonAction(sender: AnyObject) {
+    @IBAction func switchButtonAction(sender: AnyObject) {  //botón para habilitar o inhabilitar las opciones de recolección
         
-        if !switchButton.on {
+        if !switchButton.on {   //"!" negacion de la acción == if swtich button.off,
             
             firstCheckMarckImage.hidden = true
             secondCheckMarckImage.hidden = true
@@ -76,7 +78,7 @@ class ViewController: UIViewController {
         
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {   // ?????
         if let direction = NSUserDefaults.standardUserDefaults().objectForKey("selected")as? String{
             
         directionLabel.text = direction
@@ -86,7 +88,7 @@ class ViewController: UIViewController {
     }
 
     
-    @IBAction func halfHourOption(sender: AnyObject) {
+    @IBAction func halfHourOption(sender: AnyObject) { //funcion para poner check mark en la opcion de 30 min y quitar la de 1 hora
         
         firstCheckMarckImage.hidden = false
         secondCheckMarckImage.hidden = true
@@ -94,7 +96,7 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func fullTimeOption(sender: AnyObject) {
+    @IBAction func fullTimeOption(sender: AnyObject) {//funcion para poner check mark en la opcion de 60 min y quitar la de media hora
         
         firstCheckMarckImage.hidden = true
         secondCheckMarckImage.hidden = false
@@ -105,7 +107,7 @@ class ViewController: UIViewController {
     
     @IBAction func openRateView(sender: AnyObject) {
         
-        if(isOpen){
+        if(isOpen){ //si es verdadero  esconde la tabla y pone imagen de abrir >
             
             tableView.hidden = true
             isOpen = false
@@ -113,7 +115,7 @@ class ViewController: UIViewController {
             
             
         }
-        else {
+        else {  //si es falso muestra la tabla y pone imagen de cerrar \/
         
         tableView.hidden = false
             isOpen = true
@@ -129,7 +131,8 @@ class ViewController: UIViewController {
 
 
 
-extension ViewController:UITableViewDataSource, UITableViewDelegate{
+extension ViewController:UITableViewDataSource, UITableViewDelegate{ // ??s
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayWithQuestions.count
     }

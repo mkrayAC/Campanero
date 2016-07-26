@@ -22,20 +22,21 @@ class SelectOptionController: UIViewController, SaveDirectionDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let array = NSUserDefaults.standardUserDefaults().objectForKey("directions") as? NSArray{
+        if let array = NSUserDefaults.standardUserDefaults().objectForKey("directions") as? NSArray{ // ???
         
             arrayWithDirections = array.mutableCopy() as! NSMutableArray
             
         }
         
-        tablewViewDirection.dataSource = self
+        tablewViewDirection.dataSource = self  // self, delegate??
         tablewViewDirection.delegate = self
   
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: #selector(addTapped))
-//tocar boton y mandar a mapa con segue
+        
         
     }
     
+//tocar boton y mandar a mapa con segue
     
     
     func addTapped()  {
@@ -45,40 +46,35 @@ class SelectOptionController: UIViewController, SaveDirectionDelegate  {
         
     }
     
-    func sendDirection(direction: String) {
+    func sendDirection(direction: String) {  //funcion para convertir un arreglo mutable en inmutable
         arrayWithDirections.addObject(direction)
         
-        let arrayInmutable = NSArray(array: arrayWithDirections)
-        NSUserDefaults.standardUserDefaults().setObject(arrayInmutable, forKey: "directions")
-        NSUserDefaults.standardUserDefaults().synchronize()
+        let arrayInmutable = NSArray(array: arrayWithDirections) //conversion del arreglo
+        NSUserDefaults.standardUserDefaults().setObject(arrayInmutable, forKey: "directions")//el arreglo se guarda en memoria
+        NSUserDefaults.standardUserDefaults().synchronize() // ??
         
         
         tablewViewDirection.reloadData()
     }
 
-    
 
-    
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {  // esta funcion sirve para guardar la ubicacion escogida del mapa
         
         let controller = segue.destinationViewController as! MapViewController
         controller.delegate = self
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    
-
+ 
 }
 
 extension SelectOptionController:UITableViewDataSource, UITableViewDelegate{
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {// esta funcion sirve para ver cuantas filas tenemos en el arrayWithDirections y regresa un entero
+        
         return arrayWithDirections.count
     }
     
-    //configurar la celda
+    //configurar la celda ???
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -93,51 +89,50 @@ extension SelectOptionController:UITableViewDataSource, UITableViewDelegate{
             
                  customCell.accessoryType = .Checkmark
             }
-            
-            
         }
-        
-        
-       
         return customCell
     }
     
+    //funcion para borrar una fila de una direccion guardada, se elimina la fila y se borra la informacion de memoria
+    
      func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
         if editingStyle == UITableViewCellEditingStyle.Delete {
-         //   arrayWithDirections.removeAtIndex(indexPath.row)
+            
+         
+            
             arrayWithDirections.removeObjectAtIndex(indexPath.row )
             let arrayInmutable = NSArray(array: arrayWithDirections)
             NSUserDefaults.standardUserDefaults().setObject(arrayInmutable, forKey: "directions")
             NSUserDefaults.standardUserDefaults().synchronize()
-            
-
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
     }
     
+   
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+ 
+ 
         let arrayWithCell = tableView.visibleCells
-        for cell in arrayWithCell{
+        
+        for cell in arrayWithCell{ //borra checkmarck de celdas no seleccionadas
             cell.accessoryType = .None
             
         }
-        
+ 
         
         // marcar opcion
         
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         cell?.accessoryType = .Checkmark
         
+        //Toma le valor de arrayWithDirectons y lo utiliza en el view controller para poder ver la direccion seleccionada
         NSUserDefaults.standardUserDefaults().setObject(arrayWithDirections.objectAtIndex(indexPath.row), forKey: "selected")
+ 
         
-        //    indexPathSelected = indexPath
-        
-        
-    }
-    
-    
-    
-    
+ }
+ 
 }
 
+ 
