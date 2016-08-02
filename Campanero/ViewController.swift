@@ -9,6 +9,7 @@
 import UIKit //libreria
 
 
+
 //aqui van todas las variables y outlets
 class ViewController: UIViewController {
     
@@ -22,14 +23,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var directionLabel: UILabel!
     
-    @IBOutlet weak var firstCheckMarckImage: UIImageView!
-    @IBOutlet weak var secondCheckMarckImage: UIImageView!
-    
-    @IBOutlet weak var halfHourButton: UIButton!
+   
     
     
     @IBOutlet weak var switchButton: UISwitch!
-    @IBOutlet weak var fullHourButton: UIButton!
+    
     
     
 
@@ -59,23 +57,14 @@ class ViewController: UIViewController {
     
     @IBAction func switchButtonAction(sender: AnyObject) {  //botón para habilitar o inhabilitar las opciones de recolección
         
+        
         if !switchButton.on {   //"!" negacion de la acción == if swtich button.off,
             
-            firstCheckMarckImage.hidden = true
-            secondCheckMarckImage.hidden = true
-            
-            halfHourButton.enabled = false
-            fullHourButton.enabled = false
-            
+            var onOff = true;
+            onOff = false;
+        
+        
         }
-        else if  (switchButton != nil) {
-            
-            halfHourButton.enabled = true
-            fullHourButton.enabled = true
-        }
-        
-        
-        
     }
     
     override func viewWillAppear(animated: Bool) {   // ????? //INVESTIGA
@@ -88,20 +77,7 @@ class ViewController: UIViewController {
     }
 
     
-    @IBAction func halfHourOption(sender: AnyObject) { //funcion para poner check mark en la opcion de 30 min y quitar la de 1 hora
-        
-        firstCheckMarckImage.hidden = false
-        secondCheckMarckImage.hidden = true
-        
-        
-    }
-    
-    @IBAction func fullTimeOption(sender: AnyObject) {//funcion para poner check mark en la opcion de 60 min y quitar la de media hora
-        
-        firstCheckMarckImage.hidden = true
-        secondCheckMarckImage.hidden = false
-        
-    }
+  
 
     //boton para mostrar y esconder menu de valoracion de servicio
     
@@ -124,6 +100,7 @@ class ViewController: UIViewController {
         }
         
     }
+    
     
     
     

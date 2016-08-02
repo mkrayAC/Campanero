@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import Alamofire
 
 //funcion para enviar datos de un controller a otro //ES LO QUE HACE PERO EN REALIDAD ES UN PROTOCOLO
 
@@ -23,6 +24,8 @@ protocol SaveDirectionDelegate: class{
 class MapViewController: UIViewController {
     
     var delegate: SaveDirectionDelegate?
+    
+ 
     
     
     @IBOutlet weak var directionLabel: UILabel!
@@ -40,15 +43,31 @@ class MapViewController: UIViewController {
 
         //añadir boton con codigo a la barra
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "save", style: .Plain, target: self, action: #selector(addTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "save", style: .Plain, target: self, action: #selector(saveDirections))
+        
             }
     
     //regresar a ventana option despues de guardar 
-    func addTapped()  {
+    
+    func saveDirections()  {
+        let dictionary = ["user":"Oscar",
+                          "point":"19.34566,-184.00928"]
         
         self.navigationController?.popViewControllerAnimated(true)
         delegate?.sendDirection(directionLabel.text!)
-        
+        Alamofire.request(.POST, "http://pulsar.nebusens.network/login_gateway/campanero", parameters: dictionary , encoding: .JSON, headers: nil).response {(request, response, data, error)in
+            
+            do{
+                let jsonDict = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableLeaves)as? NSDictionary
+                print(jsonDict)
+            }
+            
+            catch let dataError{
+                print(dataError)
+            }
+            
+            
+        }
     }
     
 
@@ -61,6 +80,8 @@ class MapViewController: UIViewController {
         // 2
         geocoder.reverseGeocodeCoordinate(coordinate) { response, error in
             if let address = response?.firstResult() {
+                
+                
                 
                 // 3
                 let lines = address.lines
