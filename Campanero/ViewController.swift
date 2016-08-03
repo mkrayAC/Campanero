@@ -20,12 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var rateServiceButtonImage: UIImageView!
     @IBOutlet weak var rateServiceButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var directionLabel: UILabel!
-    
-   
-    
-    
     @IBOutlet weak var switchButton: UISwitch!
     
     
@@ -41,7 +36,7 @@ class ViewController: UIViewController {
         tableView.layer.borderWidth = 2.0
         tableView.layer.borderColor = UIColor.blackColor().CGColor
         
-        isOpen=false   //??
+        isOpen=false
         
     
         
@@ -108,7 +103,7 @@ class ViewController: UIViewController {
 
 
 
-extension ViewController:UITableViewDataSource, UITableViewDelegate{ // ??s  //PARECIDO AL DE MAPAS
+extension ViewController:UITableViewDataSource, UITableViewDelegate{ //Extension para configurar el tableView //PARECIDO AL DE MAPAS
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayWithQuestions.count

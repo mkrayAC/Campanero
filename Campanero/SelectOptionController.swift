@@ -28,7 +28,7 @@ class SelectOptionController: UIViewController, SaveDirectionDelegate  {
             
         }
         
-        tablewViewDirection.dataSource = self  // self, delegate?? //INVESTIGA
+        tablewViewDirection.dataSource = self
         tablewViewDirection.delegate = self
   
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: #selector(addTapped))
